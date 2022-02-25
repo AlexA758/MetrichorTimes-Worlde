@@ -1,0 +1,18 @@
+#! /usr/bin/node
+const fs = require('fs/promises')
+const path = require('path')
+const datamuse = require('datamuse')
+
+const TOTAL_WORD_COUNT = 1000;
+
+datamuse.words({
+  sp: '?????',
+  max: TOTAL_WORD_COUNT,
+})
+.then((word_reference) => {
+  const outputLocation = path.resolve(path.join(__dirname, '..', 'src', 'assets', 'wordles.json'))
+  fs.writeFile(outputLocation, JSON.stringify(word_reference
+    .map(({ word }) => ({ word, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ word }) => word)), 'UTF-8' )
+});
