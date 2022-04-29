@@ -19,11 +19,24 @@
       function checkWord() {
         let wotd = document.getElementById('wotd').textContent.toUpperCase();
         let guess = document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag');
-        let i = 0;
+        let i = 0, j = 0;
         
         while(i < guess.length) {
+          
+          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'wrong';
+          
           if(guess[i].textContent == wotd[i]){
             document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'correct';
+          }
+          else {
+            while(j < wotd.length) {
+
+              if(guess[i].textContent == wotd[j]) {
+                document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'match';
+              }
+              j++
+            }
+            j = 0;
           }
           i++;
         }
