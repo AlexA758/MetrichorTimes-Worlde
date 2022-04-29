@@ -10,7 +10,13 @@
   </head>
   <body>
     <wordle-app >
-      <!-- TODO: You could nest your own components here or simply add them to the <wordle-app/> component JSX -->
+      <!-- Author: Alexis Alexander - 29th April 2022 -->
     </wordle-app>
+    <script>
+      function addLetter(e) {
+        console.log(e.detail.letter);
+      }
+      document.addEventListener("pressed", addLetter)
+    </script>
   </body>
 </html>

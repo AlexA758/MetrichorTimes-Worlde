@@ -12,10 +12,7 @@ key-tag {
     cursor: pointer;
 }
 
-key-tag.unselected {
-    background-color: rgb(211 214 218);
-}
-key-tag.selected {
+key-tag.incorrect {
     background-color: rgb(120 124 126);
 }
 key-tag.correct {

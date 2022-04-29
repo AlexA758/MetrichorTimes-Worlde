@@ -5,16 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { PassLetter } from "./components/key-app/key-app";
 export namespace Components {
     interface GridApp {
     }
     interface KeyApp {
         "keyChar": string;
-        "kind": "unselected" | "selected" | "correct" | "match";
+        "status": "incorrect" | "correct" | "match";
     }
     interface KeyboardApp {
     }
     interface LetterApp {
+        "status": "incorrect" | "correct" | "match";
+        "wordChar": string;
     }
     interface WordleApp {
     }
@@ -63,11 +66,14 @@ declare namespace LocalJSX {
     }
     interface KeyApp {
         "keyChar"?: string;
-        "kind"?: "unselected" | "selected" | "correct" | "match";
+        "onPressed"?: (event: CustomEvent<PassLetter>) => void;
+        "status"?: "incorrect" | "correct" | "match";
     }
     interface KeyboardApp {
     }
     interface LetterApp {
+        "status"?: "incorrect" | "correct" | "match";
+        "wordChar"?: string;
     }
     interface WordleApp {
     }

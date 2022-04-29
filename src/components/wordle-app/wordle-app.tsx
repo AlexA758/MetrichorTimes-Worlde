@@ -11,6 +11,7 @@ export class WordleApp {
 
     wordOfTheDay = WORDLES[dayOfYear()];
 
+    
     render() {
         return (
             <div>

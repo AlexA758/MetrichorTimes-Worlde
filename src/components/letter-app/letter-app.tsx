@@ -7,11 +7,13 @@ import { Component, h, Prop } from '@stencil/core';
 
 export class LetterApp {
 
+    @Prop() wordChar: string;
+    @Prop() status: "incorrect" | "correct" | "match";
+
     render() {
 
         return(
-            <letter-tag></letter-tag>
+            <letter-tag class={this.status}>{this.wordChar}</letter-tag>
         );
-
     }
 }

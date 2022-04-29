@@ -1,4 +1,8 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter, Listen } from '@stencil/core';
+
+export interface PassLetter {
+    letter: string;
+}
 
 @Component({
     tag: 'key-app',
@@ -8,17 +12,20 @@ import { Component, h, Prop } from '@stencil/core';
 export class KeyApp {
 
     @Prop() keyChar: string;
-    @Prop() kind: "unselected" | "selected" | "correct" | "match";
+    @Prop() status: "incorrect" | "correct" | "match";
+    @Event() pressed: EventEmitter<PassLetter>;
 
-    handleClick = () => {
-        this.kind = 'selected';
-        console.log(this.keyChar);
+    @Listen('click')
+    handleClick() {
+        this.pressed.emit({
+            letter: this.keyChar
+        });
     }
 
     render() {
 
         return(
-            <key-tag onClick={this.handleClick} class={this.kind}>{this.keyChar}</key-tag>
+            <key-tag class={this.status}>{this.keyChar}</key-tag>
         );
     }
 }
