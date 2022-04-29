@@ -14,7 +14,7 @@
     </wordle-app>
     <script>
       let words = document.getElementsByTagName('word-tag');
-      let w = 1, l = 0;
+      let w = 1, l = 0, check = 0;
 
       function checkWord() {
         let wotd = document.getElementById('wotd').textContent.toUpperCase();
@@ -29,6 +29,7 @@
           if(guess[i].textContent == wotd[i]){
             document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'correct';
             document.getElementById(guess[i].textContent).className = 'correct';
+            check++
           }
           else {
             while(j < wotd.length) {
@@ -43,17 +44,35 @@
           }
           i++;
         }
+        if(check ==5) {
+          console.log('Success');
+        }
+        else {
+          check = 0;
+        }
       }
 
       function playWordle(e) {
-        if(l==5 || e.detail.letter == 'Enter'){
+        if(l < 5 && e.detail.letter == 'Enter'){
+          document.getElementById('info').className = 'show';
+          setTimeout(2000);
+          document.getElementById('info').className = 'hide';
+        }
+        else if(l==5 || e.detail.letter == 'Enter'){
           checkWord();
           w++;
           l = 0;
         }
-        document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = 'focus';
-        words[w].getElementsByTagName('letter-tag')[l].textContent = e.detail.letter;
-        l++;
+        else if (e.detail.letter == 'DEL') {
+          l--;
+          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = '';
+          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].textContent = '';
+        }
+        else if(e.detail.letter != 'Enter') {
+          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = 'focus';
+          words[w].getElementsByTagName('letter-tag')[l].textContent = e.detail.letter;
+          l++;
+        }        
       }
       document.addEventListener("pressed", playWordle)
     </script>
