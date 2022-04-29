@@ -14,8 +14,8 @@ export class WordleApp {
     render() {
         return (
             <div>
-                <h1>Wordle of the day: {this.wordOfTheDay}</h1>
-                //TODO: Recreate the guts of your Wordle app here
+                <grid-app></grid-app>
+                <keyboard-app></keyboard-app>
             </div>
         );
     }

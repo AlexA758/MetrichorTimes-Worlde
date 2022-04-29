@@ -1,0 +1,26 @@
+letter-tag {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid rgb(200 200 200);
+    margin: 2px;
+    min-height: 4vw;
+    min-width: 4vw;
+    font-size: 2.4em;
+    font-weight: bolder;
+}
+
+letter-tag.wrong {
+    border: none;
+    background-color: rgb(120 124 126);
+}
+
+letter-tag.match {
+    border: none;
+    background-color: rgb(201 180 88);
+}
+
+letter-tag.correct {
+    border: none;
+    background-color: rgb(106 170 100);
+}

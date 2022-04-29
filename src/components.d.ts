@@ -6,10 +6,44 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface GridApp {
+    }
+    interface KeyApp {
+        "keyChar": string;
+        "kind": "unselected" | "selected" | "correct" | "match";
+    }
+    interface KeyboardApp {
+    }
+    interface LetterApp {
+    }
     interface WordleApp {
     }
 }
 declare global {
+    interface HTMLGridAppElement extends Components.GridApp, HTMLStencilElement {
+    }
+    var HTMLGridAppElement: {
+        prototype: HTMLGridAppElement;
+        new (): HTMLGridAppElement;
+    };
+    interface HTMLKeyAppElement extends Components.KeyApp, HTMLStencilElement {
+    }
+    var HTMLKeyAppElement: {
+        prototype: HTMLKeyAppElement;
+        new (): HTMLKeyAppElement;
+    };
+    interface HTMLKeyboardAppElement extends Components.KeyboardApp, HTMLStencilElement {
+    }
+    var HTMLKeyboardAppElement: {
+        prototype: HTMLKeyboardAppElement;
+        new (): HTMLKeyboardAppElement;
+    };
+    interface HTMLLetterAppElement extends Components.LetterApp, HTMLStencilElement {
+    }
+    var HTMLLetterAppElement: {
+        prototype: HTMLLetterAppElement;
+        new (): HTMLLetterAppElement;
+    };
     interface HTMLWordleAppElement extends Components.WordleApp, HTMLStencilElement {
     }
     var HTMLWordleAppElement: {
@@ -17,13 +51,31 @@ declare global {
         new (): HTMLWordleAppElement;
     };
     interface HTMLElementTagNameMap {
+        "grid-app": HTMLGridAppElement;
+        "key-app": HTMLKeyAppElement;
+        "keyboard-app": HTMLKeyboardAppElement;
+        "letter-app": HTMLLetterAppElement;
         "wordle-app": HTMLWordleAppElement;
     }
 }
 declare namespace LocalJSX {
+    interface GridApp {
+    }
+    interface KeyApp {
+        "keyChar"?: string;
+        "kind"?: "unselected" | "selected" | "correct" | "match";
+    }
+    interface KeyboardApp {
+    }
+    interface LetterApp {
+    }
     interface WordleApp {
     }
     interface IntrinsicElements {
+        "grid-app": GridApp;
+        "key-app": KeyApp;
+        "keyboard-app": KeyboardApp;
+        "letter-app": LetterApp;
         "wordle-app": WordleApp;
     }
 }
@@ -31,6 +83,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "grid-app": LocalJSX.GridApp & JSXBase.HTMLAttributes<HTMLGridAppElement>;
+            "key-app": LocalJSX.KeyApp & JSXBase.HTMLAttributes<HTMLKeyAppElement>;
+            "keyboard-app": LocalJSX.KeyboardApp & JSXBase.HTMLAttributes<HTMLKeyboardAppElement>;
+            "letter-app": LocalJSX.LetterApp & JSXBase.HTMLAttributes<HTMLLetterAppElement>;
             "wordle-app": LocalJSX.WordleApp & JSXBase.HTMLAttributes<HTMLWordleAppElement>;
         }
     }

@@ -1,0 +1,12 @@
+app-grid {
+    flex-direction: column;
+    margin: 3vh auto 1vh;
+
+    app-word {
+      flex-direction: row;
+
+      app-letter {
+        flex-direction: column;
+      }
+    }
+}

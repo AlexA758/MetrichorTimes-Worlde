@@ -1,0 +1,12 @@
+keyboard-tag {
+    flex-direction: column;
+    margin: 1vh auto 2vh;
+
+    keys-tag {
+        flex-direction: row;
+
+        app-key {
+            flex-direction: column;
+        }
+    }
+}

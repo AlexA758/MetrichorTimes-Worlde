@@ -32,7 +32,7 @@
     "datamuse": "^1.0.5",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "puppeteer": "^10.0.0"
+    "puppeteer": "^13.6.0"
   },
   "license": "MPL-2.0"
 }

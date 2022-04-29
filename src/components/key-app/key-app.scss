@@ -1,0 +1,26 @@
+key-tag {
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgb(211 214 218);
+    margin: 2px;
+    padding: 0px 5px;
+    min-height: 9vh;
+    min-width: 3vw;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+key-tag.unselected {
+    background-color: rgb(211 214 218);
+}
+key-tag.selected {
+    background-color: rgb(120 124 126);
+}
+key-tag.correct {
+    background-color: rgb(201 180 88);
+}
+key-tag.match {
+    background-color: rgb(106 170 100);
+}
