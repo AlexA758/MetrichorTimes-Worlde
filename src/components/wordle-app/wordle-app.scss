@@ -11,5 +11,9 @@ wordle-app {
 
   div {
     flex-direction: column;
+
+    hidden {
+      //display: none;
+    }
   }
 }

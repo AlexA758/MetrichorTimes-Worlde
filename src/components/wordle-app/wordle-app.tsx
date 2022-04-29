@@ -15,7 +15,8 @@ export class WordleApp {
     render() {
         return (
             <div>
-                <grid-app></grid-app>
+                <hidden>{this.wordOfTheDay}</hidden>
+                <grid-app ></grid-app>
                 <keyboard-app></keyboard-app>
             </div>
         );
