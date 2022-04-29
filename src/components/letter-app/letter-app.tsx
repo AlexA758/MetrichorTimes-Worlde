@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 export class LetterApp {
 
     @Prop() wordChar: string;
-    @Prop() status: "incorrect" | "correct" | "match";
+    @Prop() status: "focus" | "incorrect" | "correct" | "match";
 
     render() {
 

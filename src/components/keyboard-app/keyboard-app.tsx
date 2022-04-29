@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, } from '@stencil/core';
 
 @Component({
     tag: 'keyboard-app',
@@ -41,7 +41,6 @@ export class KeyBoardApp {
                     <key-app keyChar='C'></key-app>
                     <key-app keyChar='V'></key-app>
                     <key-app keyChar='B'></key-app>
-                    <key-app keyChar='N'></key-app>
                     <key-app keyChar='N'></key-app>
                     <key-app keyChar='M'></key-app>
                     <key-app keyChar='DEL'></key-app>

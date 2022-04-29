@@ -17,15 +17,30 @@
       let w = 1, l = 0;
 
       function checkWord() {
+        let wotd = document.getElementById('wotd').textContent;
+        let guess = document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag');
+        let i = 0;
         
+        //console.log(woth, guess);
+
+        while(i < guess.length) {
+          if(guess[i] == wotd[i]){
+            document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'correct';
+            console.log('class set');
+          }
+          i++;
+        }
+
+        console.log(guess);
       }
 
       function playWordle(e) {
-        if(l==5){
+        if(l==5 || e.detail.letter == 'Enter'){
           checkWord();
           w++;
           l = 0;
         }
+        document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = 'focus';
         words[w].getElementsByTagName('letter-tag')[l].textContent = e.detail.letter;
         l++;
       }

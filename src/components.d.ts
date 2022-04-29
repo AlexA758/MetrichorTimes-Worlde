@@ -16,7 +16,7 @@ export namespace Components {
     interface KeyboardApp {
     }
     interface LetterApp {
-        "status": "incorrect" | "correct" | "match";
+        "status": "focus" | "incorrect" | "correct" | "match";
         "wordChar": string;
     }
     interface WordleApp {
@@ -72,7 +72,7 @@ declare namespace LocalJSX {
     interface KeyboardApp {
     }
     interface LetterApp {
-        "status"?: "incorrect" | "correct" | "match";
+        "status"?: "focus" | "incorrect" | "correct" | "match";
         "wordChar"?: string;
     }
     interface WordleApp {
