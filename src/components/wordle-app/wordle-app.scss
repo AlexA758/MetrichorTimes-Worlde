@@ -17,21 +17,19 @@ wordle-app {
     }
 
     span {
-      display: hidden;
+      display: block;
       opacity: 0.0;
       padding: 20px;
-      background-color: rgb(0 0 0 );
+      background-color: rgb(0 0 0);
       color: rgb(255 255 255);
       border-radius: 5px;
     }
 
     span.show {
-      display: block;
       animation-name: show;
 	    animation-duration: 2s;
     }
     span.hide {
-      display: hidden;
       animation-name: hide;
 	    animation-duration: 2s;
     }

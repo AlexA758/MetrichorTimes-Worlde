@@ -44,8 +44,10 @@
           }
           i++;
         }
-        if(check ==5) {
-          console.log('Success');
+        if(check == 5) {
+          document.getElementById('info').style.backgroundColor = 'rgb(106, 170 ,100)';
+          document.getElementById('info').textContent = 'Congradulations - You\'ve Won!!';
+          document.getElementById('info').className = 'show';
         }
         else {
           check = 0;
@@ -53,26 +55,36 @@
       }
 
       function playWordle(e) {
-        if(l < 5 && e.detail.letter == 'Enter'){
+        if(w != 5) {
+          if(l < 5 && e.detail.letter == 'Enter'){
+            document.getElementById('info').textContent = 'Not Enough Letters';
+            document.getElementById('info').className = 'show';
+            setTimeout(2000);
+            document.getElementById('info').className = 'hide';
+            document.getElementById('info').textContent = 'Not Enough Letters';
+          }
+          else if(l==5 || e.detail.letter == 'Enter'){
+            checkWord();
+            w++;
+            l = 0;
+          }
+          else if (e.detail.letter == 'DEL') {
+            l--;
+            document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = '';
+            document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].textContent = '';
+          }
+          else if(e.detail.letter != 'Enter') {
+            document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = 'focus';
+            words[w].getElementsByTagName('letter-tag')[l].textContent = e.detail.letter;
+            l++;
+          }  
+        }
+        else {
+          document.getElementById('info').style.backgroundColor = 'rgb(106, 170 ,100)';
+          document.getElementById('info').textContent = 'You\'re out of Guesses. - Try Again Tomorrow!!';
           document.getElementById('info').className = 'show';
-          setTimeout(2000);
-          document.getElementById('info').className = 'hide';
         }
-        else if(l==5 || e.detail.letter == 'Enter'){
-          checkWord();
-          w++;
-          l = 0;
-        }
-        else if (e.detail.letter == 'DEL') {
-          l--;
-          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = '';
-          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].textContent = '';
-        }
-        else if(e.detail.letter != 'Enter') {
-          document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[l].className = 'focus';
-          words[w].getElementsByTagName('letter-tag')[l].textContent = e.detail.letter;
-          l++;
-        }        
+              
       }
       document.addEventListener("pressed", playWordle)
     </script>

@@ -16,7 +16,7 @@ export class WordleApp {
         return (
             <div>
                 <hidden id='wotd'>{this.wordOfTheDay}</hidden>
-                <span id='info'>Not Enough Letters</span>
+                <span id='info'></span>
                 <grid-app ></grid-app>
                 <keyboard-app></keyboard-app>
             </div>
