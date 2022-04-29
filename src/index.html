@@ -13,8 +13,11 @@
       <!-- Author: Alexis Alexander - 29th April 2022 -->
     </wordle-app>
     <script>
+      let words = document.getElementsByTagName('word-tag');
+      let w = 0, l = 0;
+
       function addLetter(e) {
-        console.log(e.detail.letter);
+        console.log(e.detail.letter, words[3].getElementsByTagName('letter-tag'))
       }
       document.addEventListener("pressed", addLetter)
     </script>

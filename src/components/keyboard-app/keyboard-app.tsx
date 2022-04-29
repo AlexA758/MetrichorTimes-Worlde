@@ -47,7 +47,6 @@ export class KeyBoardApp {
                     <key-app keyChar='DEL'></key-app>
                 </keys-tag>
             </keyboard-tag>
-
         );
     }
 }

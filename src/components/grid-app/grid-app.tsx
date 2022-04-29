@@ -10,50 +10,57 @@ export class GridApp {
     render() {
 
         return(
-            <app-grid>
-                <app-word>
+            <grid-tag>
+                <word-tag>
                     <app-letter></app-letter>
                     <app-letter></app-letter>
                     <app-letter></app-letter>
                     <app-letter></app-letter>
                     <app-letter></app-letter>
-                </app-word>
-                <app-word>
+                </word-tag>
+                <word-tag>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
-                </app-word>
-                <app-word>
+                </word-tag>
+                <word-tag>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
-                </app-word>
-                <app-word>
+                </word-tag>
+                <word-tag>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
-                </app-word>
-                <app-word>
+                </word-tag>
+                <word-tag>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
-                </app-word>
-                <app-word>
+                </word-tag>
+                <word-tag>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
                     <letter-app></letter-app>
-                </app-word>
-            </app-grid>
+                </word-tag>
+                <word-tag>
+                    <letter-app></letter-app>
+                    <letter-app></letter-app>
+                    <letter-app></letter-app>
+                    <letter-app></letter-app>
+                    <letter-app></letter-app>
+                </word-tag>
+            </grid-tag>
         );
     }
 }

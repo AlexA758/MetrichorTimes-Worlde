@@ -1,11 +1,11 @@
-app-grid {
+grid-tag {
     flex-direction: column;
-    margin: 3vh auto 1vh;
+    margin: 8vh auto 2vh;
 
-    app-word {
+    word-tag {
       flex-direction: row;
 
-      app-letter {
+      letter-tag {
         flex-direction: column;
       }
     }
