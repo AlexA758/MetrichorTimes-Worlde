@@ -15,8 +15,8 @@ export class WordleApp {
     render() {
         return (
             <div>
-                <hidden id='wotd'>{this.wordOfTheDay}</hidden>
-                <span id='info'></span>
+                <word id='wotd'>{this.wordOfTheDay}</word>
+                <notice id='info'></notice>
                 <grid-app ></grid-app>
                 <keyboard-app></keyboard-app>
             </div>

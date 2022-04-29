@@ -48,6 +48,7 @@
           document.getElementById('info').style.backgroundColor = 'rgb(106, 170 ,100)';
           document.getElementById('info').textContent = 'Congradulations - You\'ve Won!!';
           document.getElementById('info').className = 'show';
+          w = 7
         }
         else {
           check = 0;
@@ -55,7 +56,8 @@
       }
 
       function playWordle(e) {
-        if(w != 5) {
+        if(w < 7) {
+
           if(l < 5 && e.detail.letter == 'Enter'){
             document.getElementById('info').textContent = 'Not Enough Letters';
             document.getElementById('info').className = 'show';
@@ -83,8 +85,7 @@
           document.getElementById('info').style.backgroundColor = 'rgb(106, 170 ,100)';
           document.getElementById('info').textContent = 'You\'re out of Guesses. - Try Again Tomorrow!!';
           document.getElementById('info').className = 'show';
-        }
-              
+        }          
       }
       document.addEventListener("pressed", playWordle)
     </script>

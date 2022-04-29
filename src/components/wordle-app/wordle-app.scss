@@ -12,11 +12,11 @@ wordle-app {
   div {
     flex-direction: column;
 
-    hidden {
+    word {
       display: none;
     }
 
-    span {
+    notice {
       display: block;
       opacity: 0.0;
       padding: 20px;
@@ -25,11 +25,11 @@ wordle-app {
       border-radius: 5px;
     }
 
-    span.show {
+    notice.show {
       animation-name: show;
 	    animation-duration: 2s;
     }
-    span.hide {
+    notice.hide {
       animation-name: hide;
 	    animation-duration: 2s;
     }
