@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h} from '@stencil/core';
 import WORDLES from '../../assets/wordles.json';
 import { dayOfYear } from '../../utils';
 

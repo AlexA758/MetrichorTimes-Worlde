@@ -17,21 +17,16 @@
       let w = 1, l = 0;
 
       function checkWord() {
-        let wotd = document.getElementById('wotd').textContent;
+        let wotd = document.getElementById('wotd').textContent.toUpperCase();
         let guess = document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag');
         let i = 0;
         
-        //console.log(woth, guess);
-
         while(i < guess.length) {
-          if(guess[i] == wotd[i]){
+          if(guess[i].textContent == wotd[i]){
             document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'correct';
-            console.log('class set');
           }
           i++;
         }
-
-        console.log(guess);
       }
 
       function playWordle(e) {
