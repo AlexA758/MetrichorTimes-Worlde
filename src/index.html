@@ -24,15 +24,18 @@
         while(i < guess.length) {
           
           document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'wrong';
+          document.getElementById(guess[i].textContent).className = 'incorrect';
           
           if(guess[i].textContent == wotd[i]){
             document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'correct';
+            document.getElementById(guess[i].textContent).className = 'correct';
           }
           else {
             while(j < wotd.length) {
 
               if(guess[i].textContent == wotd[j]) {
                 document.getElementsByTagName('word-tag')[w].getElementsByTagName('letter-tag')[i].className = 'match';
+                document.getElementById(guess[i].textContent).className = 'match';
               }
               j++
             }

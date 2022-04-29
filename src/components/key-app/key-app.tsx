@@ -25,7 +25,7 @@ export class KeyApp {
     render() {
 
         return(
-            <key-tag class={this.status}>{this.keyChar}</key-tag>
+            <key-tag id={this.keyChar} class={this.status}>{this.keyChar}</key-tag>
         );
     }
 }
